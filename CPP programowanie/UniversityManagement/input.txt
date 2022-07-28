@@ -1,0 +1,43 @@
+7
+Profesor Florence Pineda B2B 60 P001
+Adiunkt Marie Townsend UoP 8700 P002
+Profesor Mary Greene UoP 6000 P003
+Adiunkt Frank Osborne UoP 5700 P004
+Aystent Esmai Croft UoP 4500 P005
+Konserwator Danny Kent UZ 4000 P006
+Ochroniarz Skye Kendall B2B 24 P007
+4
+P001 121 Metody numeryczne
+P004 122 Filozofia
+P004 123 Etyka
+P002 124 Analiza Matematyczna
+30
+Edward Neal 121 122 124
+Charles Small 121 123 124
+Anna Weiss 121 122
+Elizabeth Cabrera 122  124
+Helen Newton 121 123 124
+Ethel Mcintyre 124
+Ruth Espinoza 121
+Alice Steele 122 124
+Henry Spence 122 123 124
+Robert Robbins 121 122 123
+Thomas Barlow 121 123 
+William Hooper 121 122 123 124
+James Newman 121 122
+Joseph Lambert 121 124
+Julia Santiago 123 124
+Marcelina Dodd 123
+Charleigh Dougherty
+Idris Swift 122
+Sahara Weiss
+Isabelle Cleveland
+Milli Fowler
+Hadley Davidson 121 122 123
+Boris Lynn 121 
+Tamsin Finch 121 122 123 124
+Dustin Ireland 124
+Abi Blanchard 123 124
+Persephone Cunningham 121 122 123 124
+Rania Rocha 121 124
+Cyrus Clements 121 122 124
