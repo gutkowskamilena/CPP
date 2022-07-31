@@ -59,23 +59,61 @@ void zadAccount() {
 
 void zadStudent()
 {
-	Student first(4);
-	first.setName("Pawel");
-	first.setSurname("Kowal");
-	first.addGrade(2);
-	first.addGrade(3);
-	first.addGrade(4);
-	first.addGrade(5);
-	first.getName();
-	first.getSurname();
-	first.getStudentsGrades();
-	std::cout << "Srednia ocen: " << first.average();
+	//Student first(4);
+	//first.setName("Pawel");
+	//first.setSurname("Kowal");
+	//first.addGrade(2);
+	//first.addGrade(3);
+	//first.addGrade(4);
+	//first.addGrade(5);
+	//first.getName();
+	//first.getSurname();
+	//first.getStudentsGrades();
+	//std::cout << "Srednia ocen: " << first.average();
 
-	//kompozycja
-	Student studentKompozycja("Grójecka", 39);
+	//KOMPOZYCJA
+	//Student ma w³asny obiekt klasy adress, który przechowuje mu pola street i house number - 
+	//obiekt klasy adress nale¿y tylko do niego i tylko on ma mo¿liwoœæ wprowadzania w tym obiekcie zmiany
+	//  
+	//Student studentKompozycja("Grójecka", 39);
 
-	//agregacja
-	Adress adress("Grójecka", 39);
+	//--------------------------------------------------------------------------
+
+
+	//AGREGACJA
+	// Jan i Ala  maj¹ dostêp do tego samego adresu - obiekt wewnêtrzny adress jest wykorzystywany przez wiele obiektów klasy zewnêtrznej student
+	// 1. Podejœcie:bez referencji - 
+	// Ala i Jan korzystaj¹ z kopii obiektu klasy adress - ka¿de z nich ma swój egemplarz adresu z którym mo¿e coœ niezale¿nie robiæ(aby dzia³a³o w tym kodzie trzeba usun¹æ &)
+	// 
+	// 2. Podejœcie: z referencj¹ - 
+	// Jan i Ala korzystaj¹ dok³adnie z tego zamego obiektu klasy adress, ka¿da edycja edycja zrobiona u jednego bedzie widoczna u drugiego studenta
+	//Adress adress("Ksiazeca", 15);
+	//Student JanNowak(adress);
+	//Student AlaNowak(adress);
+
+	//std::cout << JanNowak.getHouseNo() << std::endl;
+	//std::cout << AlaNowak.getHouseNo() << std::endl;
+
+	//adress.setHouseNo(150);
+
+	//std::cout << JanNowak.getHouseNo() << std::endl;
+	//std::cout << AlaNowak.getHouseNo() << std::endl;
+
+	//---------------------------------------------------------------------------
+
+	//ASOCJACJA
+	//tworzymy obiek student z promotorem juz w konstruktorze, a promotorowi setujemy studenta
+
+	
+	Student Dionizy;    //po³¹czenie student->promotor
+	Promotor promotor(Dionizy);
+	Dionizy.setPromotor(&promotor);     //po³¹czenie promotor->student. 
+	//poniewa¿ w deklaracji funkcja ta przyjmuje obiekt typu wskaŸnikowego to tutaj musimy wprowadziæ adres parametru promotor, który pobieramy za pomoc¹ &
+	Dionizy.sendEmailToPromotor();
+
+
+
+
 }
 
 void zadCar()
@@ -89,6 +127,6 @@ int main()
 {
 	//zadMyClassShape();
 	//zadAccount();
-	//zadStudent();
+	zadStudent();
 	//zadCar();
 }

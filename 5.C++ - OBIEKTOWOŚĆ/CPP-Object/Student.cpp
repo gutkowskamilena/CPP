@@ -4,24 +4,29 @@
 Student::Student()
 {
 }
+//
+//Student::Student(int noOfGrades)
+//{
+//	//tworzymy dynamicznie tablice o dlugosci noOfGrades
+//	//przypisujemy wskaznik na poczatek tej tablicy do pola grades
+//	grades = new int[noOfGrades];
+//	this->noOfGrades = noOfGrades;
+//}
+//
+//Student::Student(std::string streetName, int houseNumber)
+//{
+//	_adress._streetName = streetName;
+//	_adress._houseNumber = houseNumber;
+//}
 
-Student::Student(int noOfGrades)
-{
-	//tworzymy dynamicznie tablice o dlugosci noOfGrades
-	//przypisujemy wskaznik na poczatek tej tablicy do pola grades
-	grades = new int[noOfGrades];
-	this->noOfGrades = noOfGrades;
-}
+//Student::Student(Adress& adress):_adress (adress)
+//{
+//	
+//}
 
-Student::Student(std::string streetName, int houseNumber)
+Student::Student(Promotor promotor)
 {
-	_adress._streetName = streetName;
-	_adress._houseNumber = houseNumber;
-}
-
-Student::Student(Adress adress)
-{
-	_adress = adress;
+	//this->promotor = promotor;
 }
 
 Student::~Student()
@@ -84,3 +89,47 @@ void Student::getStudentsGrades()
 	std::cout << std::endl;
 }
 
+//int Student::getHouseNo()
+//{
+//	return _adress._houseNumber;
+//}
+
+void Student::setPromotor(Promotor* promotor)
+{
+	this->promotor = promotor;
+}
+
+void Student::sendEmailToPromotor()
+{
+	std::cout << "Student wysyla mejl do promotora" << std::endl;
+	promotor->receiveEmail("Witam");
+}
+
+void Adress::setHouseNo(int houseNo)
+{
+	_houseNumber = houseNo;
+}
+
+Adress::Adress()
+{
+}
+
+Adress::Adress(std::string streetName, int houseNumber):
+	_streetName (streetName),
+	_houseNumber (houseNumber)
+{
+}
+
+Promotor::Promotor(Student& student):student(student)
+{
+}
+
+void Promotor::receiveEmail(std::string emailCopy)
+{
+	std::cout << "Promotor odebra email" << std::endl << emailCopy << std::endl;
+}
+
+void Promotor::setName(std::string name)
+{
+	this->name = name;
+}
