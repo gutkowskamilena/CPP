@@ -22,6 +22,6 @@ int main()
 
 	File plik2("nowy","txt");
 	plik2.dataForm("Christiano", "Ronaldo",  999);
-	plik2.printList();
+	
 	plik2.printFile();
 }

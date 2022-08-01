@@ -121,8 +121,33 @@ void File::dataForm(std::string name, std::string surname, int salary)
 	newEmp._salary_str = std::to_string(newEmp._salary);
 	_employeeList.push_back(newEmp);
 	std::ofstream fileToWrite(_fileName,std::ios_base::app);
-	fileToWrite << "\n" << name << "\n" << surname << "\n" << newEmp._ID << "\n" << salary;
+	fileToWrite  <<std::endl<< name << "\n" << surname << "\n" << newEmp._ID << "\n" << salary;
 }
+//int File::getIndex(int ID)
+//{
+//	std::vector < int > ::iterator it;
+//	it = _employeeList.begin();
+//	return it;
+//}
+//void File::deleteEmployee(int ID)
+//{
+//	int index = 0;
+//	
+//	std::vector < int > ::iterator it = std::find(_employeeList.begin(), _employeeList.end(), ID);
+//	it = _employeeList.begin();
+//	auto search = [] 
+//	if (std::find(_employeeList.begin(), _employeeList.end(), _employeeList[*it]._ID == ID) != _employeeList.end())
+//	{
+//		it += 
+//		_employeeList.erase(it);
+//		std::cout << "Pracownik o ID:" << ID << " zostal usuniety z listy" << std::endl;
+//	}
+//	
+//	else
+//		std::cout << "Brak pozycji na liœcie" << std::endl;
+//
+//
+//}
 
 void File::printList()
 {
