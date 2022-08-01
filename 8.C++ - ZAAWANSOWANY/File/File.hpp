@@ -46,7 +46,8 @@ private:
 public:
 
 	std::ifstream file;
-	File(std::string fileName);
+	File(std::string fileName);                               //c-tor otwierajacy istniejacy plik
+	File(std::string yourFileName, std::string format);           //c-tor tworzacy nowy plik
 	File(const File &old);
 	~File();
 	std::string getFileName();

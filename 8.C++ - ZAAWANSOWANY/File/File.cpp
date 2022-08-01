@@ -24,6 +24,20 @@ File::File(std::string fileName) :_fileName(fileName)
 	enterFileToVector();
 }
 
+File::File(std::string yourFileName, std::string format)
+{
+	_fileName = yourFileName + "." + format;
+	std::ofstream fileToWrite(_fileName);
+	if (fileToWrite.is_open())
+	{
+		std::cout << "Stworzono plik " << _fileName << std::endl;
+	}
+	else
+	{
+		std::cout << "Nie mozna utworzyæ pliku" << std::endl;
+	}
+}
+
 File::File(const File& old)
 {
 }
@@ -78,6 +92,7 @@ void File::sortAscendingBySalary()
 	}
 	std::cout << "Posortowano liste pracownikow wedlug zarobkow rosnaco: " << std::endl;
 	printList();
+	std::cout << std::endl;
 }
 
 std::string File::getFileName()
@@ -124,6 +139,8 @@ void File::Employee::setSalary(int salary)
 	_salary = salary;
 	_salary_str = std::to_string(_salary);
 }
+
+
 
 //auto File::operator[](unsigned int position)
 //{
