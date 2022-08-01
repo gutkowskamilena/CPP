@@ -113,14 +113,18 @@ void File::dataForm(std::string name, std::string surname, int ID, int salary)
 	newEmp._salary = salary;
 	newEmp._salary_str = std::to_string(newEmp._salary);
 	_employeeList.push_back(newEmp);
+	std::ofstream fileToWrite(_fileName,std::ios_base::app);
+	fileToWrite << name << "\n" << surname << "\n" << ID << "\n" << salary;
 }
 
 void File::printList()
 {
 	for (int i = 0; i < _employeeList.size()-1 ; ++i)
 	{
-		std::cout << _employeeList[i]._name << " " << _employeeList[i]._surname << " " << _employeeList[i]._ID_str << "	" << _employeeList[i]._salary_str << std::endl;
+		std::cout << _employeeList[i]._name << " " << _employeeList[i]._surname << " " << _employeeList[i]._ID_str << "	" << _employeeList[i]._salary_str << "\n";
 	}
+
+	std::cout << std::endl;
 }
 
 std::string File::getName(int index)

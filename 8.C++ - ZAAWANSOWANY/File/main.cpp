@@ -11,7 +11,7 @@
 
 int main()
 {
-	File plik("C:\\Users\\gutko\\source\\sda\\8.C++ - ZAAWANSOWANY\\pracownicy.txt");
+	File plik("pracownicy.txt");
 	//plik.printFile();
 
 	plik.dataForm("Christiano", "Ronaldo", 333, 999);
@@ -20,7 +20,8 @@ int main()
 
 	plik.sortAscendingBySalary();
 
-	File plik2("nowy","mp4");
+	File plik2("nowy","txt");
 	plik2.dataForm("Christiano", "Ronaldo", 333, 999);
+	plik2.printList();
 	plik2.printFile();
 }
