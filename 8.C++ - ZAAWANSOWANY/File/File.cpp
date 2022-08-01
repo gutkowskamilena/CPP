@@ -103,18 +103,25 @@ std::string File::getFileName()
 	return _fileName;
 }
 
-void File::dataForm(std::string name, std::string surname, int ID, int salary)
+void File::dataForm(std::string name, std::string surname, int salary)
 {
+	//co zrobiæ ¿eby na pierwszym miejscu wektora nie by³ empty object?
+
 	Employee newEmp;
+	std::random_device r;
+	std::mt19937_64 mt_engine(r());
+	std::uniform_int_distribution<int> realDistrbituion(100, 999);
+	newEmp._ID = realDistrbituion(mt_engine);
+
 	newEmp._name = name;
 	newEmp._surname = surname;
-	newEmp._ID = ID;
+	
 	newEmp._ID_str = std::to_string(newEmp._ID);
 	newEmp._salary = salary;
 	newEmp._salary_str = std::to_string(newEmp._salary);
 	_employeeList.push_back(newEmp);
 	std::ofstream fileToWrite(_fileName,std::ios_base::app);
-	fileToWrite << name << "\n" << surname << "\n" << ID << "\n" << salary;
+	fileToWrite << "\n" << name << "\n" << surname << "\n" << newEmp._ID << "\n" << salary;
 }
 
 void File::printList()
@@ -124,7 +131,7 @@ void File::printList()
 		std::cout << _employeeList[i]._name << " " << _employeeList[i]._surname << " " << _employeeList[i]._ID_str << "	" << _employeeList[i]._salary_str << "\n";
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 std::string File::getName(int index)

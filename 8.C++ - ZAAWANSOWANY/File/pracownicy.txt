@@ -37,10 +37,9 @@ Wolska
 Sandra
 Szynszyl
 654
-9600Christiano
+9600
+
+Christiano
 Ronaldo
-333
-999Christiano
-Ronaldo
-333
+155
 999

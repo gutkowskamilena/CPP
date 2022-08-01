@@ -57,7 +57,7 @@ public:
 	void sortAscendingBySalary();
 	void printList();
 	std::string getName(int index);
-	void dataForm(std::string name, std::string surname, int ID, int salary);           //formularz pozwala na dopisywanie pracowników do listy
+	void dataForm(std::string name, std::string surname, int salary);           //formularz pozwala na dopisywanie pracowników do listy
 
 	//std::ostream& operator<<(std::ostream& s, const File& v);
 	//auto operator[](unsigned int position);

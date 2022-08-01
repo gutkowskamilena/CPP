@@ -14,14 +14,14 @@ int main()
 	File plik("pracownicy.txt");
 	//plik.printFile();
 
-	plik.dataForm("Christiano", "Ronaldo", 333, 999);
+	plik.dataForm("Christiano", "Ronaldo",  999);
 	
 	//std::cout << plik << std::endl;
 
 	plik.sortAscendingBySalary();
 
 	File plik2("nowy","txt");
-	plik2.dataForm("Christiano", "Ronaldo", 333, 999);
+	plik2.dataForm("Christiano", "Ronaldo",  999);
 	plik2.printList();
 	plik2.printFile();
 }
