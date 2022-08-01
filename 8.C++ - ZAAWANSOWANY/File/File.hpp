@@ -42,23 +42,25 @@ private:
 	
 	Employee employee;
 	std::string _fileName;
-	std::vector < Employee > _employeeList;
+	std::vector < Employee > _employeeList{ employee };
 public:
 
 	std::ifstream file;
+	std::ofstream fileToWrite;
 	File(std::string fileName);                               //c-tor otwierajacy istniejacy plik
 	File(std::string yourFileName, std::string format);           //c-tor tworzacy nowy plik
 	File(const File &old);
 	~File();
 	std::string getFileName();
-	auto operator[](unsigned int position);
 	void printFile();
 	void enterFileToVector();
 	void sortAscendingBySalary();
 	void printList();
 	std::string getName(int index);
+	void dataForm(std::string name, std::string surname, int ID, int salary);           //formularz pozwala na dopisywanie pracowników do listy
+
 	//std::ostream& operator<<(std::ostream& s, const File& v);
-	
+	//auto operator[](unsigned int position);
 };
 
 //std::ostream& operator<<(std::ostream& s, const File& v) {

@@ -44,7 +44,10 @@ File::File(const File& old)
 
 File::~File()
 {
+	//if (file.is_open())
 	file.close();
+	//else if (fileToWrite.is_open())
+	fileToWrite.close();
 }
 
 void File::printFile()
@@ -98,6 +101,18 @@ void File::sortAscendingBySalary()
 std::string File::getFileName()
 {
 	return _fileName;
+}
+
+void File::dataForm(std::string name, std::string surname, int ID, int salary)
+{
+	Employee newEmp;
+	newEmp._name = name;
+	newEmp._surname = surname;
+	newEmp._ID = ID;
+	newEmp._ID_str = std::to_string(newEmp._ID);
+	newEmp._salary = salary;
+	newEmp._salary_str = std::to_string(newEmp._salary);
+	_employeeList.push_back(newEmp);
 }
 
 void File::printList()
