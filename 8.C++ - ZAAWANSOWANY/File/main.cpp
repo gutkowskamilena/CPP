@@ -11,7 +11,15 @@
 
 int main()
 {
-	File plik("pracownicy.txt");
+	try
+	{
+		File plik("pracownicy.txt");
+	}
+	catch(std::string& errorString)
+	{
+		std::cout << errorString << std::endl;
+	}
+	
 	//plik.printFile();
 
 	plik.dataForm("Christiano", "Ronaldo",  999);

@@ -142,6 +142,7 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="car.cpp" />
+    <ClCompile Include="Const.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyClass.cpp" />
     <ClCompile Include="NestedClass.cpp" />
@@ -152,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="Account.hpp" />
     <ClInclude Include="Car.hpp" />
+    <ClInclude Include="Const.hpp" />
     <ClInclude Include="inheretance.hpp" />
     <ClInclude Include="MyClass.hpp" />
     <ClInclude Include="Shape.hpp" />

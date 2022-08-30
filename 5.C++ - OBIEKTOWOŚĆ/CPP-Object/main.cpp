@@ -5,6 +5,7 @@
 #include<string>
 #include "Student.hpp"
 #include "Car.hpp"
+#include "Const.hpp"
 
 
 void zadMyClassShape()
@@ -106,27 +107,48 @@ void zadStudent()
 
 	
 	Student Dionizy;    //po³¹czenie student->promotor
-	Promotor promotor(Dionizy);
-	Dionizy.setPromotor(&promotor);     //po³¹czenie promotor->student. 
-	//poniewa¿ w deklaracji funkcja ta przyjmuje obiekt typu wskaŸnikowego to tutaj musimy wprowadziæ adres parametru promotor, który pobieramy za pomoc¹ &
+	{
+
+		Promotor promotor(Dionizy);
+		Dionizy.setPromotor(&promotor);     //po³¹czenie promotor->student. 
+		//poniewa¿ w deklaracji funkcja ta przyjmuje wskaznik to tutaj musimy wprowadziæ adres obiektu promotor, który pobieramy za pomoc¹ & (wskaznik=adres w pamieci)
+		Dionizy.sendEmailToPromotor();
+		
+	}
 	Dionizy.sendEmailToPromotor();
 
 
-
+	std::cout << "koniec";
 
 }
 
 void zadCar()
 {
-	Car AlfaRomeo(EngineType::petrol);                //stosowanie typów z klasy enum odbywa sie poprzez       NazwaKlasy::typ
+	Car AlfaRomeo(EngineType::petrol, 1.7);                //stosowanie typów z klasy enum odbywa sie poprzez       NazwaKlasy::typ
 	AlfaRomeo.annualService();
+
+	std::cout << AlfaRomeo.getVIN() << std::endl;
 
 
 }
+
+void zadConst()
+{
+	const LectureRoom roomA(15);
+	LectureRoom roomB(30);
+	//roomB = roomA;     //w te strone dziala
+	//roomA = roomB;     //tutaj juz nie dziala bo do stalego obiektu chcemy przypisac niestaly obiekt
+	//pol obiektu roomA tez nie da sie zmieniac
+
+	std::cout << roomB.getSize() << std::endl;
+	
+}
+
 int main()
 {
 	//zadMyClassShape();
 	//zadAccount();
 	zadStudent();
 	//zadCar();
+	//zadConst();
 }

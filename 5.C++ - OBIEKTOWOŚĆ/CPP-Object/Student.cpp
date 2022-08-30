@@ -124,6 +124,11 @@ Promotor::Promotor(Student& student):student(student)
 {
 }
 
+Promotor::~Promotor()
+{
+	std::cout << "Promotor umiera" << std::endl;
+}
+
 void Promotor::receiveEmail(std::string emailCopy)
 {
 	std::cout << "Promotor odebra email" << std::endl << emailCopy << std::endl;

@@ -15,13 +15,14 @@ File::File(std::string fileName) :_fileName(fileName)
 
 	if (file.is_open())
 	{
+		enterFileToVector();
 		std::cout << "Wczytano plik " << _fileName << std::endl;
 	}
 	else
 	{
-		std::cout << "Nie mozna otworzyc pliku" << std::endl;
+		throw std::string("Nie mozna otworzyc pliku");
 	}
-	enterFileToVector();
+	
 }
 
 File::File(std::string yourFileName, std::string format)
@@ -107,22 +108,31 @@ void File::dataForm(std::string name, std::string surname, int salary)
 {
 	//co zrobiæ ¿eby na pierwszym miejscu wektora nie by³ empty object?
 
-	Employee newEmp;
+	//Employee employee;
 	std::random_device r;
 	std::mt19937_64 mt_engine(r());
 	std::uniform_int_distribution<int> realDistrbituion(100, 999);
-	newEmp._ID = realDistrbituion(mt_engine);
+	employee._ID = realDistrbituion(mt_engine);
 
-	newEmp._name = name;
-	newEmp._surname = surname;
+	employee._name = name;
+	employee._surname = surname;
 	
-	newEmp._ID_str = std::to_string(newEmp._ID);
-	newEmp._salary = salary;
-	newEmp._salary_str = std::to_string(newEmp._salary);
-	_employeeList.push_back(newEmp);
+	employee._ID_str = std::to_string(employee._ID);
+	employee._salary = salary;
+	employee._salary_str = std::to_string(employee._salary);
+	_employeeList.push_back(employee);
 	std::ofstream fileToWrite(_fileName,std::ios_base::app);
-	fileToWrite  <<std::endl<< name << "\n" << surname << "\n" << newEmp._ID << "\n" << salary;
+	fileToWrite  <<std::endl<< name << "\n" << surname << "\n" << employee._ID << "\n" << salary;
 }
+//void File::deleteEmployee(int ID)
+//{
+//	std::vector<Employee>::iterator it;
+//
+//	it = _employeeList.begin();
+//	//pêtla wyszukuj¹ca obiekt o danym ID + przypisanie pozycji iteratora do tego obiektu 
+//	_employeeList.erase(it);
+//
+//}
 //int File::getIndex(int ID)
 //{
 //	std::vector < int > ::iterator it;

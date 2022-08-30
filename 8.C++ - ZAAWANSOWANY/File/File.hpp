@@ -58,7 +58,7 @@ public:
 	void printList();
 	std::string getName(int index);
 	void dataForm(std::string name, std::string surname, int salary);           //formularz pozwala na dopisywanie pracowników do listy
-	void deleteEmployee(int ID);
+	//void deleteEmployee(int ID);
 	int getIndex(int ID);
 	//std::ostream& operator<<(std::ostream& s, const File& v);
 	//auto operator[](unsigned int position);

@@ -18,6 +18,7 @@ class Promotor
 	std::string name;
 public:
 	Promotor(Student& student);
+	~Promotor();
 	void receiveEmail(std::string emailCopy);
 	void setName(std::string name);
 };
@@ -27,7 +28,7 @@ class Student {
 	//Adress& _adress;
 	std::string _name;
 	std::string _surname;
-	Promotor* promotor;            //wskaünik czyli po prostu adres w pamieci
+	Promotor* promotor = nullptr;            //wskaünik czyli po prostu adres w pamieci
 
 	int* grades = nullptr;         //dynamiczna tablica ocen
 	int noOfGrades = 0;            //ilosc ocen maksymalna = rozmiar tablicy
@@ -50,7 +51,7 @@ public:
 	double average();
 	void getStudentsGrades();
 	int getHouseNo();
-	void setPromotor(Promotor* promotor);            //metoda ta przymuje wskaünik * na promotora czyli adres w pamieci, dllatego w mainie uøywamy tu &, ktÛrym pobieramy adres obiektu
+	void setPromotor(Promotor* promotor);            //metoda ta przymuje wskaünik * na promotora czyli adres w pamieci, dlatego w mainie uøywamy tu &, ktÛrym pobieramy adres obiektu
 	void sendEmailToPromotor();
 
 };

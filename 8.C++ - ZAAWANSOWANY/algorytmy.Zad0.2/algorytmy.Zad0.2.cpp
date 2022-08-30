@@ -26,13 +26,17 @@ public:
 
 int main()
 {
-    std::vector < int > numbers;
-    numbers.reserve(100);
-
-    std::iota(numbers.begin(), numbers.end(), 1);
+    //0.2
+    std::vector < int > numbers(100);                 //c-tor 4 wektora
+    
+    std::iota(numbers.begin(), numbers.end(), 1);           //wypelnia wektor od 1 do 100
+    
+    //a) rbegin, rend - wypisujemy od konca
 
     std::for_each(numbers.rbegin(), numbers.rend(), [](const int i) {std::cout << i << "-"; });
     std::cout << std::endl;
+
+    //unary function printInt
     std::for_each(numbers.begin(), numbers.end(), printInt);
 
     //f)Zlicz sumê wszystkich liczb parzystych i zapisz j¹ do zmiennej lokalnej int sum;
