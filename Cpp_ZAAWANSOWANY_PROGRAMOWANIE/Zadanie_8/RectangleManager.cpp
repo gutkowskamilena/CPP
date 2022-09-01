@@ -61,5 +61,4 @@ void RectangleManager::deleteInvalid()
 {
 	vectorOfRectangles.erase(std::remove_if(vectorOfRectangles.begin(), vectorOfRectangles.end(), invalidFunction), vectorOfRectangles.end());
 
-	std::for_each(vectorOfRectangles.begin(), vectorOfRectangles.end(), printRectange);
 }
