@@ -4,8 +4,8 @@
 int main()
 {
     CaesarCipher myWord;
-    std::cout << myWord.cypher("dzis jest dobry dzien", 2) << std::endl;
-    std::cout << myWord.decepher("fbku lguv fqdta fbkgp", 2) << std::endl;
+    std::cout << myWord.cypher("dzis jest dobry dzien", 18) << std::endl;
+    std::cout << myWord.decepher("jfoy pkyz juhxe jfokt", 6) << std::endl;
 
 
 }
